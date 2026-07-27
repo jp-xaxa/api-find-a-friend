@@ -1,4 +1,5 @@
 import "dotenv/config"
+
 import { z } from "zod"
 
 const envSchema = z.object({
@@ -7,7 +8,15 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3333),
 })
 
-const _env = envSchema.safeParse(process.env)
+// Uma variavel declarada sem valor no .env (por exemplo NODE_ENV=) chega aqui
+// como string vazia, nao como undefined. Sem descartar essas entradas o
+// .default() nunca se aplica (ele so trata undefined) e o z.coerce.number()
+// converteria "" em 0, subindo o servidor numa porta aleatoria sem aviso.
+const definedEnv = Object.fromEntries(
+  Object.entries(process.env).filter(([, value]) => value !== ""),
+)
+
+const _env = envSchema.safeParse(definedEnv)
 
 if (_env.success === false) {
   console.error("❌ Invalid environment variables", _env.error.format())

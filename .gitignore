@@ -1,1 +1,6 @@
 node_modules
+build
+
+# Variaveis de ambiente locais. O .env.example fica rastreado como referencia.
+.env
+.env.local
