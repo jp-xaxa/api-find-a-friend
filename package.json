@@ -10,9 +10,12 @@
     "build": "tsup src --out-dir build"
   },
   "dependencies": {
-    "fastify": "^5.10.0"
+    "dotenv": "17.4.2",
+    "fastify": "^5.10.0",
+    "zod": "4.4.3"
   },
   "devDependencies": {
+    "@types/node": "26.1.1",
     "tsup": "^8.5.1",
     "tsx": "^4.23.1",
     "typescript": "^7.0.2"
