@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Ong {
+  id                        String   @id @default(uuid())
+  name_responsavel          String
+  email                     String   @unique
+  cep                       String
+  address                   String
+  phone                     String
+  password_hash             String
+  created_at                DateTime @default(now())
+
+  @@map("ongs")
+}
+

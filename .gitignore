@@ -4,3 +4,8 @@ build
 # Variaveis de ambiente locais. O .env.example fica rastreado como referencia.
 .env
 .env.local
+/src/generated/prisma
+.claude
+.agents
+.windsurf
+skills-lock.json
