@@ -22,3 +22,8 @@ export * from './enums.js';
  * 
  */
 export type Ong = Prisma.OngModel
+/**
+ * Model Pet
+ * 
+ */
+export type Pet = Prisma.PetModel

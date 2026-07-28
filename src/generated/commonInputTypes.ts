@@ -72,6 +72,74 @@ export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
 }
 
+export type EnumAgeFilter<$PrismaModel = never> = {
+  equals?: $Enums.Age | Prisma.EnumAgeFieldRefInput<$PrismaModel>
+  in?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAgeFilter<$PrismaModel> | $Enums.Age
+}
+
+export type EnumAnimalSizeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AnimalSize | Prisma.EnumAnimalSizeFieldRefInput<$PrismaModel>
+  in?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel> | $Enums.AnimalSize
+}
+
+export type EnumLevelOfIndependenceFilter<$PrismaModel = never> = {
+  equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel> | $Enums.LevelOfIndependence
+}
+
+export type EnumEnvironmentFilter<$PrismaModel = never> = {
+  equals?: $Enums.Environment | Prisma.EnumEnvironmentFieldRefInput<$PrismaModel>
+  in?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel> | $Enums.Environment
+}
+
+export type EnumAgeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Age | Prisma.EnumAgeFieldRefInput<$PrismaModel>
+  in?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAgeWithAggregatesFilter<$PrismaModel> | $Enums.Age
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAgeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAgeFilter<$PrismaModel>
+}
+
+export type EnumAnimalSizeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AnimalSize | Prisma.EnumAnimalSizeFieldRefInput<$PrismaModel>
+  in?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAnimalSizeWithAggregatesFilter<$PrismaModel> | $Enums.AnimalSize
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+}
+
+export type EnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel> | $Enums.LevelOfIndependence
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel>
+}
+
+export type EnumEnvironmentWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Environment | Prisma.EnumEnvironmentFieldRefInput<$PrismaModel>
+  in?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnvironmentWithAggregatesFilter<$PrismaModel> | $Enums.Environment
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -137,6 +205,74 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type NestedEnumAgeFilter<$PrismaModel = never> = {
+  equals?: $Enums.Age | Prisma.EnumAgeFieldRefInput<$PrismaModel>
+  in?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAgeFilter<$PrismaModel> | $Enums.Age
+}
+
+export type NestedEnumAnimalSizeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AnimalSize | Prisma.EnumAnimalSizeFieldRefInput<$PrismaModel>
+  in?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel> | $Enums.AnimalSize
+}
+
+export type NestedEnumLevelOfIndependenceFilter<$PrismaModel = never> = {
+  equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel> | $Enums.LevelOfIndependence
+}
+
+export type NestedEnumEnvironmentFilter<$PrismaModel = never> = {
+  equals?: $Enums.Environment | Prisma.EnumEnvironmentFieldRefInput<$PrismaModel>
+  in?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel> | $Enums.Environment
+}
+
+export type NestedEnumAgeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Age | Prisma.EnumAgeFieldRefInput<$PrismaModel>
+  in?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Age[] | Prisma.ListEnumAgeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAgeWithAggregatesFilter<$PrismaModel> | $Enums.Age
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAgeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAgeFilter<$PrismaModel>
+}
+
+export type NestedEnumAnimalSizeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AnimalSize | Prisma.EnumAnimalSizeFieldRefInput<$PrismaModel>
+  in?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AnimalSize[] | Prisma.ListEnumAnimalSizeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAnimalSizeWithAggregatesFilter<$PrismaModel> | $Enums.AnimalSize
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+}
+
+export type NestedEnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel> | $Enums.LevelOfIndependence
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLevelOfIndependenceFilter<$PrismaModel>
+}
+
+export type NestedEnumEnvironmentWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.Environment | Prisma.EnumEnvironmentFieldRefInput<$PrismaModel>
+  in?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  notIn?: $Enums.Environment[] | Prisma.ListEnumEnvironmentFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnvironmentWithAggregatesFilter<$PrismaModel> | $Enums.Environment
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEnvironmentFilter<$PrismaModel>
 }
 
 

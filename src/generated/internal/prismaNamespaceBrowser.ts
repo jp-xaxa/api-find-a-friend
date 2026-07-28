@@ -51,7 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Ong: 'Ong'
+  Ong: 'Ong',
+  Pet: 'Pet'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -82,6 +83,22 @@ export const OngScalarFieldEnum = {
 } as const
 
 export type OngScalarFieldEnum = (typeof OngScalarFieldEnum)[keyof typeof OngScalarFieldEnum]
+
+
+export const PetScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  about: 'about',
+  age: 'age',
+  size: 'size',
+  level_independence: 'level_independence',
+  environment: 'environment',
+  donation_requirements: 'donation_requirements',
+  created_at: 'created_at',
+  ong_id: 'ong_id'
+} as const
+
+export type PetScalarFieldEnum = (typeof PetScalarFieldEnum)[keyof typeof PetScalarFieldEnum]
 
 
 export const SortOrder = {

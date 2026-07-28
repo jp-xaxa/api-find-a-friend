@@ -46,3 +46,8 @@ export { Prisma }
  * 
  */
 export type Ong = Prisma.OngModel
+/**
+ * Model Pet
+ * 
+ */
+export type Pet = Prisma.PetModel

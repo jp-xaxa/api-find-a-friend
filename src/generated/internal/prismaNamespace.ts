@@ -397,7 +397,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Ong: 'Ong'
+  Ong: 'Ong',
+  Pet: 'Pet'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,7 +414,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "ong"
+    modelProps: "ong" | "pet"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -491,6 +492,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Pet: {
+      payload: Prisma.$PetPayload<ExtArgs>
+      fields: Prisma.PetFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PetFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PetFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        findFirst: {
+          args: Prisma.PetFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PetFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        findMany: {
+          args: Prisma.PetFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>[]
+        }
+        create: {
+          args: Prisma.PetCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        createMany: {
+          args: Prisma.PetCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PetCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>[]
+        }
+        delete: {
+          args: Prisma.PetDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        update: {
+          args: Prisma.PetUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        deleteMany: {
+          args: Prisma.PetDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PetUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PetUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>[]
+        }
+        upsert: {
+          args: Prisma.PetUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PetPayload>
+        }
+        aggregate: {
+          args: Prisma.PetAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePet>
+        }
+        groupBy: {
+          args: Prisma.PetGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PetGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PetCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PetCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -544,6 +619,22 @@ export const OngScalarFieldEnum = {
 export type OngScalarFieldEnum = (typeof OngScalarFieldEnum)[keyof typeof OngScalarFieldEnum]
 
 
+export const PetScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  about: 'about',
+  age: 'age',
+  size: 'size',
+  level_independence: 'level_independence',
+  environment: 'environment',
+  donation_requirements: 'donation_requirements',
+  created_at: 'created_at',
+  ong_id: 'ong_id'
+} as const
+
+export type PetScalarFieldEnum = (typeof PetScalarFieldEnum)[keyof typeof PetScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -591,6 +682,62 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Age'
+ */
+export type EnumAgeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Age'>
+    
+
+
+/**
+ * Reference to a field of type 'Age[]'
+ */
+export type ListEnumAgeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Age[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AnimalSize'
+ */
+export type EnumAnimalSizeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AnimalSize'>
+    
+
+
+/**
+ * Reference to a field of type 'AnimalSize[]'
+ */
+export type ListEnumAnimalSizeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AnimalSize[]'>
+    
+
+
+/**
+ * Reference to a field of type 'LevelOfIndependence'
+ */
+export type EnumLevelOfIndependenceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LevelOfIndependence'>
+    
+
+
+/**
+ * Reference to a field of type 'LevelOfIndependence[]'
+ */
+export type ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LevelOfIndependence[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Environment'
+ */
+export type EnumEnvironmentFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Environment'>
+    
+
+
+/**
+ * Reference to a field of type 'Environment[]'
+ */
+export type ListEnumEnvironmentFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Environment[]'>
     
 
 
@@ -759,6 +906,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   ong?: Prisma.OngOmit
+  pet?: Prisma.PetOmit
 }
 
 /* Types for Logging */

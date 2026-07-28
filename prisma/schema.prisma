@@ -7,6 +7,38 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Age {
+  Filhote
+  Adulto
+  Idoso
+}
+
+enum AnimalSize {
+  Pequeno
+  Medio
+  Grande
+}
+
+enum EnergyLevel {
+  MUITO_BAIXA @map("Muito Baixa")
+  BAIXA       @map("Baixa")
+  MEDIA       @map("Média")
+  ALTA        @map("Alta")
+  MUITO_ALTA  @map("Muito Alta")
+}
+
+enum LevelOfIndependence {
+  Baixa
+  Media
+  Alta
+}
+
+enum Environment {
+  Pequeno
+  Medio
+  Grande
+}
+
 model Ong {
   id                        String   @id @default(uuid())
   name_responsavel          String
@@ -17,6 +49,25 @@ model Ong {
   password_hash             String
   created_at                DateTime @default(now())
 
+  pets Pet[]
+
   @@map("ongs")
+}
+
+model Pet {
+  id                        String   @id @default(uuid())
+  name                      String
+  about                     String
+  age                       Age
+  size                      AnimalSize
+  level_independence        LevelOfIndependence
+  environment               Environment
+  donation_requirements     String[]
+  created_at                DateTime @default(now())
+
+  ong_id String
+  ong                       Ong @relation(fields: [ong_id], references: [id])
+
+  @@map("pets")
 }
 

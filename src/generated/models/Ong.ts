@@ -206,6 +206,7 @@ export type OngWhereInput = {
   phone?: Prisma.StringFilter<"Ong"> | string
   password_hash?: Prisma.StringFilter<"Ong"> | string
   created_at?: Prisma.DateTimeFilter<"Ong"> | Date | string
+  pets?: Prisma.PetListRelationFilter
 }
 
 export type OngOrderByWithRelationInput = {
@@ -217,6 +218,7 @@ export type OngOrderByWithRelationInput = {
   phone?: Prisma.SortOrder
   password_hash?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
+  pets?: Prisma.PetOrderByRelationAggregateInput
 }
 
 export type OngWhereUniqueInput = Prisma.AtLeast<{
@@ -231,6 +233,7 @@ export type OngWhereUniqueInput = Prisma.AtLeast<{
   phone?: Prisma.StringFilter<"Ong"> | string
   password_hash?: Prisma.StringFilter<"Ong"> | string
   created_at?: Prisma.DateTimeFilter<"Ong"> | Date | string
+  pets?: Prisma.PetListRelationFilter
 }, "id" | "email">
 
 export type OngOrderByWithAggregationInput = {
@@ -270,6 +273,7 @@ export type OngCreateInput = {
   phone: string
   password_hash: string
   created_at?: Date | string
+  pets?: Prisma.PetCreateNestedManyWithoutOngInput
 }
 
 export type OngUncheckedCreateInput = {
@@ -281,6 +285,7 @@ export type OngUncheckedCreateInput = {
   phone: string
   password_hash: string
   created_at?: Date | string
+  pets?: Prisma.PetUncheckedCreateNestedManyWithoutOngInput
 }
 
 export type OngUpdateInput = {
@@ -292,6 +297,7 @@ export type OngUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  pets?: Prisma.PetUpdateManyWithoutOngNestedInput
 }
 
 export type OngUncheckedUpdateInput = {
@@ -303,6 +309,7 @@ export type OngUncheckedUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   password_hash?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  pets?: Prisma.PetUncheckedUpdateManyWithoutOngNestedInput
 }
 
 export type OngCreateManyInput = {
@@ -371,6 +378,11 @@ export type OngMinOrderByAggregateInput = {
   created_at?: Prisma.SortOrder
 }
 
+export type OngScalarRelationFilter = {
+  is?: Prisma.OngWhereInput
+  isNot?: Prisma.OngWhereInput
+}
+
 export type StringFieldUpdateOperationsInput = {
   set?: string
 }
@@ -379,6 +391,109 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type OngCreateNestedOneWithoutPetsInput = {
+  create?: Prisma.XOR<Prisma.OngCreateWithoutPetsInput, Prisma.OngUncheckedCreateWithoutPetsInput>
+  connectOrCreate?: Prisma.OngCreateOrConnectWithoutPetsInput
+  connect?: Prisma.OngWhereUniqueInput
+}
+
+export type OngUpdateOneRequiredWithoutPetsNestedInput = {
+  create?: Prisma.XOR<Prisma.OngCreateWithoutPetsInput, Prisma.OngUncheckedCreateWithoutPetsInput>
+  connectOrCreate?: Prisma.OngCreateOrConnectWithoutPetsInput
+  upsert?: Prisma.OngUpsertWithoutPetsInput
+  connect?: Prisma.OngWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.OngUpdateToOneWithWhereWithoutPetsInput, Prisma.OngUpdateWithoutPetsInput>, Prisma.OngUncheckedUpdateWithoutPetsInput>
+}
+
+export type OngCreateWithoutPetsInput = {
+  id?: string
+  name_responsavel: string
+  email: string
+  cep: string
+  address: string
+  phone: string
+  password_hash: string
+  created_at?: Date | string
+}
+
+export type OngUncheckedCreateWithoutPetsInput = {
+  id?: string
+  name_responsavel: string
+  email: string
+  cep: string
+  address: string
+  phone: string
+  password_hash: string
+  created_at?: Date | string
+}
+
+export type OngCreateOrConnectWithoutPetsInput = {
+  where: Prisma.OngWhereUniqueInput
+  create: Prisma.XOR<Prisma.OngCreateWithoutPetsInput, Prisma.OngUncheckedCreateWithoutPetsInput>
+}
+
+export type OngUpsertWithoutPetsInput = {
+  update: Prisma.XOR<Prisma.OngUpdateWithoutPetsInput, Prisma.OngUncheckedUpdateWithoutPetsInput>
+  create: Prisma.XOR<Prisma.OngCreateWithoutPetsInput, Prisma.OngUncheckedCreateWithoutPetsInput>
+  where?: Prisma.OngWhereInput
+}
+
+export type OngUpdateToOneWithWhereWithoutPetsInput = {
+  where?: Prisma.OngWhereInput
+  data: Prisma.XOR<Prisma.OngUpdateWithoutPetsInput, Prisma.OngUncheckedUpdateWithoutPetsInput>
+}
+
+export type OngUpdateWithoutPetsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name_responsavel?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  cep?: Prisma.StringFieldUpdateOperationsInput | string
+  address?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type OngUncheckedUpdateWithoutPetsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name_responsavel?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  cep?: Prisma.StringFieldUpdateOperationsInput | string
+  address?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  password_hash?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type OngCountOutputType
+ */
+
+export type OngCountOutputType = {
+  pets: number
+}
+
+export type OngCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  pets?: boolean | OngCountOutputTypeCountPetsArgs
+}
+
+/**
+ * OngCountOutputType without action
+ */
+export type OngCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the OngCountOutputType
+   */
+  select?: Prisma.OngCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * OngCountOutputType without action
+ */
+export type OngCountOutputTypeCountPetsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PetWhereInput
+}
 
 
 export type OngSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -390,6 +505,8 @@ export type OngSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
   phone?: boolean
   password_hash?: boolean
   created_at?: boolean
+  pets?: boolean | Prisma.Ong$petsArgs<ExtArgs>
+  _count?: boolean | Prisma.OngCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["ong"]>
 
 export type OngSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -426,10 +543,18 @@ export type OngSelectScalar = {
 }
 
 export type OngOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name_responsavel" | "email" | "cep" | "address" | "phone" | "password_hash" | "created_at", ExtArgs["result"]["ong"]>
+export type OngInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  pets?: boolean | Prisma.Ong$petsArgs<ExtArgs>
+  _count?: boolean | Prisma.OngCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type OngIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type OngIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
 export type $OngPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Ong"
-  objects: {}
+  objects: {
+    pets: Prisma.$PetPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     name_responsavel: string
@@ -833,6 +958,7 @@ readonly fields: OngFieldRefs;
  */
 export interface Prisma__OngClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  pets<T extends Prisma.Ong$petsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Ong$petsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -887,6 +1013,10 @@ export type OngFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * Filter, which Ong to fetch.
    */
   where: Prisma.OngWhereUniqueInput
@@ -905,6 +1035,10 @@ export type OngFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.In
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * Filter, which Ong to fetch.
    */
   where: Prisma.OngWhereUniqueInput
@@ -922,6 +1056,10 @@ export type OngFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Omit specific fields from the Ong
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
   /**
    * Filter, which Ong to fetch.
    */
@@ -971,6 +1109,10 @@ export type OngFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.Int
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * Filter, which Ong to fetch.
    */
   where?: Prisma.OngWhereInput
@@ -1018,6 +1160,10 @@ export type OngFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Ong
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
   /**
    * Filter, which Ongs to fetch.
    */
@@ -1067,6 +1213,10 @@ export type OngCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * The data needed to create a Ong.
    */
   data: Prisma.XOR<Prisma.OngCreateInput, Prisma.OngUncheckedCreateInput>
@@ -1114,6 +1264,10 @@ export type OngUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
    * Omit specific fields from the Ong
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
   /**
    * The data needed to update a Ong.
    */
@@ -1181,6 +1335,10 @@ export type OngUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * The filter to search for the Ong to update in case it exists.
    */
   where: Prisma.OngWhereUniqueInput
@@ -1207,6 +1365,10 @@ export type OngDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
+  /**
    * Filter which Ong to delete.
    */
   where: Prisma.OngWhereUniqueInput
@@ -1227,6 +1389,30 @@ export type OngDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 }
 
 /**
+ * Ong.pets
+ */
+export type Ong$petsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Pet
+   */
+  select?: Prisma.PetSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Pet
+   */
+  omit?: Prisma.PetOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PetInclude<ExtArgs> | null
+  where?: Prisma.PetWhereInput
+  orderBy?: Prisma.PetOrderByWithRelationInput | Prisma.PetOrderByWithRelationInput[]
+  cursor?: Prisma.PetWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PetScalarFieldEnum | Prisma.PetScalarFieldEnum[]
+}
+
+/**
  * Ong without action
  */
 export type OngDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1238,4 +1424,8 @@ export type OngDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
    * Omit specific fields from the Ong
    */
   omit?: Prisma.OngOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OngInclude<ExtArgs> | null
 }

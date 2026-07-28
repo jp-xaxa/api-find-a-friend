@@ -9,7 +9,48 @@
 * 🟢 You can import this file directly.
 */
 
+export const Age = {
+  Filhote: 'Filhote',
+  Adulto: 'Adulto',
+  Idoso: 'Idoso'
+} as const
+
+export type Age = (typeof Age)[keyof typeof Age]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const AnimalSize = {
+  Pequeno: 'Pequeno',
+  Medio: 'Medio',
+  Grande: 'Grande'
+} as const
+
+export type AnimalSize = (typeof AnimalSize)[keyof typeof AnimalSize]
+
+
+export const EnergyLevel = {
+  MUITO_BAIXA: 'MUITO_BAIXA',
+  BAIXA: 'BAIXA',
+  MEDIA: 'MEDIA',
+  ALTA: 'ALTA',
+  MUITO_ALTA: 'MUITO_ALTA'
+} as const
+
+export type EnergyLevel = (typeof EnergyLevel)[keyof typeof EnergyLevel]
+
+
+export const LevelOfIndependence = {
+  Baixa: 'Baixa',
+  Media: 'Media',
+  Alta: 'Alta'
+} as const
+
+export type LevelOfIndependence = (typeof LevelOfIndependence)[keyof typeof LevelOfIndependence]
+
+
+export const Environment = {
+  Pequeno: 'Pequeno',
+  Medio: 'Medio',
+  Grande: 'Grande'
+} as const
+
+export type Environment = (typeof Environment)[keyof typeof Environment]
