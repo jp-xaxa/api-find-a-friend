@@ -76,6 +76,16 @@ export default tseslint.config(
     },
   },
 
+  // O environment customizado do vitest tem package.json proprio (exigido pela
+  // resolucao vitest-environment-<nome>), mas nao declara dependencias: elas
+  // vem do package.json da raiz. Sem isso o plugin n acusa todo import externo.
+  {
+    files: ["prisma/**"],
+    rules: {
+      "n/no-extraneous-import": "off",
+    },
+  },
+
   // Deve ser o ultimo: desliga as regras de estilo que conflitam com o prettier.
   prettier,
 )
