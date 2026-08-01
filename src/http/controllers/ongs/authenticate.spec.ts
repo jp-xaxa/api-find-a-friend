@@ -3,6 +3,10 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest"
 
 import { app } from "@/app.js"
 
+interface AuthenticateResponse {
+  token: string
+}
+
 describe("Authenticate (e2e)", () => {
   beforeAll(async () => {
     await app.ready()
@@ -28,9 +32,9 @@ describe("Authenticate (e2e)", () => {
       password: "123456",
     })
 
+    const body = response.body as AuthenticateResponse
+
     expect(response.status).toEqual(200)
-    expect(response.body).toEqual({
-      token: expect.any(String),
-    })
+    expect(body.token).toEqual(expect.any(String))
   })
 })
