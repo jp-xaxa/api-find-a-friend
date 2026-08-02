@@ -23,18 +23,24 @@ export async function authenticate(
       password,
     })
 
-    const token = await reply.jwtSign({
-      sign: {
-        sub: ong.id,
+    const token = await reply.jwtSign(
+      {},
+      {
+        sign: {
+          sub: ong.id,
+        },
       },
-    })
+    )
 
-    const refreshToken = await reply.jwtSign({
-      sign: {
-        sub: ong.id,
-        expiresIn: "7d",
+    const refreshToken = await reply.jwtSign(
+      {},
+      {
+        sign: {
+          sub: ong.id,
+          expiresIn: "7d",
+        },
       },
-    })
+    )
 
     return reply
       .setCookie("refreshToken", refreshToken, {

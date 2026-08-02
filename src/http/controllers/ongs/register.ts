@@ -26,7 +26,6 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
   } = registerBodySchema.parse(request.body)
 
   try {
-    console.log("Aqui")
     const registerOngCase = makeRegisterOngCase()
 
     await registerOngCase.execute({
