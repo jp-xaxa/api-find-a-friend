@@ -7,15 +7,11 @@ import type { OngsRepository } from "@/repositories/ongs-repository.js"
 export class InMemoryOngsRepository implements OngsRepository {
   public items: Ong[] = []
 
-  // async findById(id: string) {
-  //   const user = this.items.find((item) => item.id === id)
+  async findById(id: string) {
+    const ong = this.items.find((item) => item.id === id)
 
-  //   if (!user) {
-  //     return null
-  //   }
-
-  //   return user
-  // }
+    return Promise.resolve(ong ?? null)
+  }
 
   async findByEmail(email: string) {
     const ong = this.items.find((item) => item.email === email)

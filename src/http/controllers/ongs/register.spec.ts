@@ -3,7 +3,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest"
 
 import { app } from "@/app.js"
 
-describe("Register (e2e)", () => {
+describe("Register Ong (e2e)", () => {
   beforeAll(async () => {
     await app.ready()
   })

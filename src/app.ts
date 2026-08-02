@@ -5,6 +5,8 @@ import { ZodError } from "zod"
 
 import { env } from "@/env/index.js"
 import { ongsRoutes } from "@/http/controllers/ongs/routes.js"
+import { petsRoutes } from "@/http/controllers/pets/routes.js"
+import { formatValidationError } from "@/utils/format-validation-error.js"
 
 export const app = fastify()
 
@@ -22,12 +24,11 @@ app.register(fastifyJwt, {
 app.register(fastifyCookie)
 
 app.register(ongsRoutes)
+app.register(petsRoutes)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
-    return reply
-      .status(400)
-      .send({ message: "Validation error.", issues: error.format() })
+    return reply.status(400).send(formatValidationError(error))
   }
 
   if (env.NODE_ENV !== "production") {
