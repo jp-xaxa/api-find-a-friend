@@ -91,6 +91,7 @@ export const PetScalarFieldEnum = {
   about: 'about',
   age: 'age',
   size: 'size',
+  energy_Level: 'energy_Level',
   level_independence: 'level_independence',
   environment: 'environment',
   donation_requirements: 'donation_requirements',

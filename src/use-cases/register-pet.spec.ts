@@ -37,6 +37,7 @@ describe("Case register pet unit tests", () => {
       about: "Descrição breve do thor",
       age: "Filhote",
       size: "Medio",
+      energy_Level: "BAIXA",
       level_independence: "Media",
       environment: "Pequeno",
       donation_requirements: [
@@ -56,6 +57,7 @@ describe("Case register pet unit tests", () => {
         about: "Descrição breve do thor",
         age: "Filhote",
         size: "Pequeno",
+        energy_Level: "ALTA",
         level_independence: "Media",
         environment: "Pequeno",
         donation_requirements: [
@@ -74,6 +76,7 @@ describe("Case register pet unit tests", () => {
         about: "Descrição breve do thor",
         age: "Filhote",
         size: "Medio",
+        energy_Level: "MEDIA",
         level_independence: "Media",
         environment: "Pequeno",
         donation_requirements: [

@@ -4,6 +4,7 @@ import { z } from "zod"
 import {
   Age,
   AnimalSize,
+  EnergyLevel,
   Environment,
   LevelOfIndependence,
 } from "@/generated/client.js"
@@ -22,6 +23,7 @@ export async function registerPet(
     about: z.string(),
     age: z.enum(Age),
     size: z.enum(AnimalSize),
+    energy_Level: z.enum(EnergyLevel),
     level_independence: z.enum(LevelOfIndependence),
     environment: z.enum(Environment),
     donation_requirements: z.array(z.string()),
@@ -32,6 +34,7 @@ export async function registerPet(
     about,
     age,
     size,
+    energy_Level,
     level_independence,
     environment,
     donation_requirements,
@@ -46,6 +49,7 @@ export async function registerPet(
       about,
       age,
       size,
+      energy_Level,
       level_independence,
       environment,
       donation_requirements,

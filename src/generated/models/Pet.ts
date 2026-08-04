@@ -30,6 +30,7 @@ export type PetMinAggregateOutputType = {
   about: string | null
   age: $Enums.Age | null
   size: $Enums.AnimalSize | null
+  energy_Level: $Enums.EnergyLevel | null
   level_independence: $Enums.LevelOfIndependence | null
   environment: $Enums.Environment | null
   created_at: Date | null
@@ -42,6 +43,7 @@ export type PetMaxAggregateOutputType = {
   about: string | null
   age: $Enums.Age | null
   size: $Enums.AnimalSize | null
+  energy_Level: $Enums.EnergyLevel | null
   level_independence: $Enums.LevelOfIndependence | null
   environment: $Enums.Environment | null
   created_at: Date | null
@@ -54,6 +56,7 @@ export type PetCountAggregateOutputType = {
   about: number
   age: number
   size: number
+  energy_Level: number
   level_independence: number
   environment: number
   donation_requirements: number
@@ -69,6 +72,7 @@ export type PetMinAggregateInputType = {
   about?: true
   age?: true
   size?: true
+  energy_Level?: true
   level_independence?: true
   environment?: true
   created_at?: true
@@ -81,6 +85,7 @@ export type PetMaxAggregateInputType = {
   about?: true
   age?: true
   size?: true
+  energy_Level?: true
   level_independence?: true
   environment?: true
   created_at?: true
@@ -93,6 +98,7 @@ export type PetCountAggregateInputType = {
   about?: true
   age?: true
   size?: true
+  energy_Level?: true
   level_independence?: true
   environment?: true
   donation_requirements?: true
@@ -179,6 +185,7 @@ export type PetGroupByOutputType = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements: string[]
@@ -213,6 +220,7 @@ export type PetWhereInput = {
   about?: Prisma.StringFilter<"Pet"> | string
   age?: Prisma.EnumAgeFilter<"Pet"> | $Enums.Age
   size?: Prisma.EnumAnimalSizeFilter<"Pet"> | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFilter<"Pet"> | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFilter<"Pet"> | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFilter<"Pet"> | $Enums.Environment
   donation_requirements?: Prisma.StringNullableListFilter<"Pet">
@@ -227,6 +235,7 @@ export type PetOrderByWithRelationInput = {
   about?: Prisma.SortOrder
   age?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  energy_Level?: Prisma.SortOrder
   level_independence?: Prisma.SortOrder
   environment?: Prisma.SortOrder
   donation_requirements?: Prisma.SortOrder
@@ -244,6 +253,7 @@ export type PetWhereUniqueInput = Prisma.AtLeast<{
   about?: Prisma.StringFilter<"Pet"> | string
   age?: Prisma.EnumAgeFilter<"Pet"> | $Enums.Age
   size?: Prisma.EnumAnimalSizeFilter<"Pet"> | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFilter<"Pet"> | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFilter<"Pet"> | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFilter<"Pet"> | $Enums.Environment
   donation_requirements?: Prisma.StringNullableListFilter<"Pet">
@@ -258,6 +268,7 @@ export type PetOrderByWithAggregationInput = {
   about?: Prisma.SortOrder
   age?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  energy_Level?: Prisma.SortOrder
   level_independence?: Prisma.SortOrder
   environment?: Prisma.SortOrder
   donation_requirements?: Prisma.SortOrder
@@ -277,6 +288,7 @@ export type PetScalarWhereWithAggregatesInput = {
   about?: Prisma.StringWithAggregatesFilter<"Pet"> | string
   age?: Prisma.EnumAgeWithAggregatesFilter<"Pet"> | $Enums.Age
   size?: Prisma.EnumAnimalSizeWithAggregatesFilter<"Pet"> | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelWithAggregatesFilter<"Pet"> | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceWithAggregatesFilter<"Pet"> | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentWithAggregatesFilter<"Pet"> | $Enums.Environment
   donation_requirements?: Prisma.StringNullableListFilter<"Pet">
@@ -290,6 +302,7 @@ export type PetCreateInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -303,6 +316,7 @@ export type PetUncheckedCreateInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -316,6 +330,7 @@ export type PetUpdateInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -329,6 +344,7 @@ export type PetUncheckedUpdateInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -342,6 +358,7 @@ export type PetCreateManyInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -355,6 +372,7 @@ export type PetUpdateManyMutationInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -367,6 +385,7 @@ export type PetUncheckedUpdateManyInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -398,6 +417,7 @@ export type PetCountOrderByAggregateInput = {
   about?: Prisma.SortOrder
   age?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  energy_Level?: Prisma.SortOrder
   level_independence?: Prisma.SortOrder
   environment?: Prisma.SortOrder
   donation_requirements?: Prisma.SortOrder
@@ -411,6 +431,7 @@ export type PetMaxOrderByAggregateInput = {
   about?: Prisma.SortOrder
   age?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  energy_Level?: Prisma.SortOrder
   level_independence?: Prisma.SortOrder
   environment?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -423,6 +444,7 @@ export type PetMinOrderByAggregateInput = {
   about?: Prisma.SortOrder
   age?: Prisma.SortOrder
   size?: Prisma.SortOrder
+  energy_Level?: Prisma.SortOrder
   level_independence?: Prisma.SortOrder
   environment?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -483,6 +505,10 @@ export type EnumAnimalSizeFieldUpdateOperationsInput = {
   set?: $Enums.AnimalSize
 }
 
+export type EnumEnergyLevelFieldUpdateOperationsInput = {
+  set?: $Enums.EnergyLevel
+}
+
 export type EnumLevelOfIndependenceFieldUpdateOperationsInput = {
   set?: $Enums.LevelOfIndependence
 }
@@ -502,6 +528,7 @@ export type PetCreateWithoutOngInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -514,6 +541,7 @@ export type PetUncheckedCreateWithoutOngInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -555,6 +583,7 @@ export type PetScalarWhereInput = {
   about?: Prisma.StringFilter<"Pet"> | string
   age?: Prisma.EnumAgeFilter<"Pet"> | $Enums.Age
   size?: Prisma.EnumAnimalSizeFilter<"Pet"> | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFilter<"Pet"> | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFilter<"Pet"> | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFilter<"Pet"> | $Enums.Environment
   donation_requirements?: Prisma.StringNullableListFilter<"Pet">
@@ -568,6 +597,7 @@ export type PetCreateManyOngInput = {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements?: Prisma.PetCreatedonation_requirementsInput | string[]
@@ -580,6 +610,7 @@ export type PetUpdateWithoutOngInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -592,6 +623,7 @@ export type PetUncheckedUpdateWithoutOngInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -604,6 +636,7 @@ export type PetUncheckedUpdateManyWithoutOngInput = {
   about?: Prisma.StringFieldUpdateOperationsInput | string
   age?: Prisma.EnumAgeFieldUpdateOperationsInput | $Enums.Age
   size?: Prisma.EnumAnimalSizeFieldUpdateOperationsInput | $Enums.AnimalSize
+  energy_Level?: Prisma.EnumEnergyLevelFieldUpdateOperationsInput | $Enums.EnergyLevel
   level_independence?: Prisma.EnumLevelOfIndependenceFieldUpdateOperationsInput | $Enums.LevelOfIndependence
   environment?: Prisma.EnumEnvironmentFieldUpdateOperationsInput | $Enums.Environment
   donation_requirements?: Prisma.PetUpdatedonation_requirementsInput | string[]
@@ -618,6 +651,7 @@ export type PetSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
   about?: boolean
   age?: boolean
   size?: boolean
+  energy_Level?: boolean
   level_independence?: boolean
   environment?: boolean
   donation_requirements?: boolean
@@ -632,6 +666,7 @@ export type PetSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extension
   about?: boolean
   age?: boolean
   size?: boolean
+  energy_Level?: boolean
   level_independence?: boolean
   environment?: boolean
   donation_requirements?: boolean
@@ -646,6 +681,7 @@ export type PetSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extension
   about?: boolean
   age?: boolean
   size?: boolean
+  energy_Level?: boolean
   level_independence?: boolean
   environment?: boolean
   donation_requirements?: boolean
@@ -660,6 +696,7 @@ export type PetSelectScalar = {
   about?: boolean
   age?: boolean
   size?: boolean
+  energy_Level?: boolean
   level_independence?: boolean
   environment?: boolean
   donation_requirements?: boolean
@@ -667,7 +704,7 @@ export type PetSelectScalar = {
   ong_id?: boolean
 }
 
-export type PetOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "about" | "age" | "size" | "level_independence" | "environment" | "donation_requirements" | "created_at" | "ong_id", ExtArgs["result"]["pet"]>
+export type PetOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "about" | "age" | "size" | "energy_Level" | "level_independence" | "environment" | "donation_requirements" | "created_at" | "ong_id", ExtArgs["result"]["pet"]>
 export type PetInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   ong?: boolean | Prisma.OngDefaultArgs<ExtArgs>
 }
@@ -689,6 +726,7 @@ export type $PetPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
     about: string
     age: $Enums.Age
     size: $Enums.AnimalSize
+    energy_Level: $Enums.EnergyLevel
     level_independence: $Enums.LevelOfIndependence
     environment: $Enums.Environment
     donation_requirements: string[]
@@ -1123,6 +1161,7 @@ export interface PetFieldRefs {
   readonly about: Prisma.FieldRef<"Pet", 'String'>
   readonly age: Prisma.FieldRef<"Pet", 'Age'>
   readonly size: Prisma.FieldRef<"Pet", 'AnimalSize'>
+  readonly energy_Level: Prisma.FieldRef<"Pet", 'EnergyLevel'>
   readonly level_independence: Prisma.FieldRef<"Pet", 'LevelOfIndependence'>
   readonly environment: Prisma.FieldRef<"Pet", 'Environment'>
   readonly donation_requirements: Prisma.FieldRef<"Pet", 'String[]'>

@@ -625,6 +625,7 @@ export const PetScalarFieldEnum = {
   about: 'about',
   age: 'age',
   size: 'size',
+  energy_Level: 'energy_Level',
   level_independence: 'level_independence',
   environment: 'environment',
   donation_requirements: 'donation_requirements',
@@ -710,6 +711,20 @@ export type EnumAnimalSizeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prism
  * Reference to a field of type 'AnimalSize[]'
  */
 export type ListEnumAnimalSizeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AnimalSize[]'>
+    
+
+
+/**
+ * Reference to a field of type 'EnergyLevel'
+ */
+export type EnumEnergyLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnergyLevel'>
+    
+
+
+/**
+ * Reference to a field of type 'EnergyLevel[]'
+ */
+export type ListEnumEnergyLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnergyLevel[]'>
     
 
 

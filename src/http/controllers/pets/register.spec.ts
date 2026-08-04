@@ -24,6 +24,7 @@ describe("Register Pet (e2e)", () => {
         about: "Descrição breve do thor",
         age: "Filhote",
         size: "Medio",
+        energy_Level: "ALTA",
         level_independence: "Media",
         environment: "Pequeno",
         donation_requirements: [

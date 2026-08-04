@@ -11,6 +11,7 @@ interface SearchPetResponse {
     about: string
     age: string
     size: string
+    energy_Level: string
     level_independence: string
     environment: string
     donation_requirements: string[]
@@ -39,6 +40,7 @@ describe("Search Pet (e2e)", () => {
         about: "Descrição breve do thor",
         age: "Filhote",
         size: "Medio",
+        energy_Level: "ALTA",
         level_independence: "Media",
         environment: "Pequeno",
         donation_requirements: [

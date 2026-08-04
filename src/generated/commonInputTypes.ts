@@ -86,6 +86,13 @@ export type EnumAnimalSizeFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel> | $Enums.AnimalSize
 }
 
+export type EnumEnergyLevelFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnergyLevel | Prisma.EnumEnergyLevelFieldRefInput<$PrismaModel>
+  in?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel> | $Enums.EnergyLevel
+}
+
 export type EnumLevelOfIndependenceFilter<$PrismaModel = never> = {
   equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
   in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
@@ -118,6 +125,16 @@ export type EnumAnimalSizeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+}
+
+export type EnumEnergyLevelWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnergyLevel | Prisma.EnumEnergyLevelFieldRefInput<$PrismaModel>
+  in?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnergyLevelWithAggregatesFilter<$PrismaModel> | $Enums.EnergyLevel
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel>
 }
 
 export type EnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel = never> = {
@@ -221,6 +238,13 @@ export type NestedEnumAnimalSizeFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel> | $Enums.AnimalSize
 }
 
+export type NestedEnumEnergyLevelFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnergyLevel | Prisma.EnumEnergyLevelFieldRefInput<$PrismaModel>
+  in?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel> | $Enums.EnergyLevel
+}
+
 export type NestedEnumLevelOfIndependenceFilter<$PrismaModel = never> = {
   equals?: $Enums.LevelOfIndependence | Prisma.EnumLevelOfIndependenceFieldRefInput<$PrismaModel>
   in?: $Enums.LevelOfIndependence[] | Prisma.ListEnumLevelOfIndependenceFieldRefInput<$PrismaModel>
@@ -253,6 +277,16 @@ export type NestedEnumAnimalSizeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAnimalSizeFilter<$PrismaModel>
+}
+
+export type NestedEnumEnergyLevelWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnergyLevel | Prisma.EnumEnergyLevelFieldRefInput<$PrismaModel>
+  in?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EnergyLevel[] | Prisma.ListEnumEnergyLevelFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEnergyLevelWithAggregatesFilter<$PrismaModel> | $Enums.EnergyLevel
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEnergyLevelFilter<$PrismaModel>
 }
 
 export type NestedEnumLevelOfIndependenceWithAggregatesFilter<$PrismaModel = never> = {

@@ -11,6 +11,7 @@ interface RegisterPetCaseRequest {
   about: string
   age: $Enums.Age
   size: $Enums.AnimalSize
+  energy_Level: $Enums.EnergyLevel
   level_independence: $Enums.LevelOfIndependence
   environment: $Enums.Environment
   donation_requirements: string[]
@@ -32,6 +33,7 @@ export class RegisterPetCase {
     about,
     age,
     size,
+    energy_Level,
     level_independence,
     environment,
     donation_requirements,
@@ -54,6 +56,7 @@ export class RegisterPetCase {
       about,
       age,
       size,
+      energy_Level,
       level_independence,
       environment,
       donation_requirements,

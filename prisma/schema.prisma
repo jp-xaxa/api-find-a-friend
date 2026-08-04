@@ -60,6 +60,7 @@ model Pet {
   about                     String
   age                       Age
   size                      AnimalSize
+  energy_Level              EnergyLevel
   level_independence        LevelOfIndependence
   environment               Environment
   donation_requirements     String[]

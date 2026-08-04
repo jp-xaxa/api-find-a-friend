@@ -23,6 +23,7 @@ export class InMemoryPetsRepository implements PetsRepository {
       about: data.about,
       age: data.age,
       size: data.size,
+      energy_Level: data.energy_Level,
       level_independence: data.level_independence,
       environment: data.environment,
       donation_requirements: Array.isArray(data.donation_requirements)
