@@ -24,6 +24,20 @@ export class PrismaPetsRepository implements PetsRepository {
   //   return Promise.resolve(ong)
   // }
 
+  async searchMany(ongsId: string[], page: number) {
+    const pets = await prisma.pet.findMany({
+      where: {
+        ong_id: {
+          in: ongsId,
+        },
+      },
+      take: 20,
+      skip: (page - 1) * 20,
+    })
+
+    return pets
+  }
+
   async create(data: Prisma.PetUncheckedCreateInput) {
     const pet = await prisma.pet.create({
       data,

@@ -19,6 +19,12 @@ export class InMemoryOngsRepository implements OngsRepository {
     return Promise.resolve(ong ?? null)
   }
 
+  async searchManyCity(city: string) {
+    const ongs = this.items.filter((item) => item.address.includes(city))
+
+    return Promise.resolve(ongs)
+  }
+
   async create(data: Prisma.OngCreateInput) {
     const ong = {
       id: randomUUID(),

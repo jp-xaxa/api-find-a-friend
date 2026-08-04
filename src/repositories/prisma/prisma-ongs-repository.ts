@@ -24,6 +24,18 @@ export class PrismaOngsRepository implements OngsRepository {
     return Promise.resolve(ong)
   }
 
+  async searchManyCity(city: string) {
+    const ongs = await prisma.ong.findMany({
+      where: {
+        address: {
+          contains: city,
+        },
+      },
+    })
+
+    return Promise.resolve(ongs)
+  }
+
   async create(data: Prisma.OngCreateInput) {
     const ong = await prisma.ong.create({
       data,

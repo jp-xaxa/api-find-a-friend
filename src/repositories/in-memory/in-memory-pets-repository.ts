@@ -7,17 +7,13 @@ import type { PetsRepository } from "@/repositories/pets-repository.js"
 export class InMemoryPetsRepository implements PetsRepository {
   public items: Pet[] = []
 
-  // async findById(id: string) {
-  //   const ong = this.items.find((item) => item.id === id)
+  async searchMany(ongsId: string[], page: number) {
+    const pets = this.items
+      .filter((item) => ongsId.includes(item.ong_id))
+      .slice((page - 1) * 20, page * 20)
 
-  //   return Promise.resolve(ong ?? null)
-  // }
-
-  // async findByEmail(email: string) {
-  //   const ong = this.items.find((item) => item.email === email)
-
-  //   return Promise.resolve(ong ?? null)
-  // }
+    return Promise.resolve(pets)
+  }
 
   async create(data: Prisma.PetUncheckedCreateInput) {
     const pet = {
