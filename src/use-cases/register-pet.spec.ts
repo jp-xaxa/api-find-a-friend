@@ -1,3 +1,4 @@
+import { hash } from "bcryptjs"
 import { beforeEach, describe, expect, it } from "vitest"
 
 import { InMemoryOngsRepository } from "@/repositories/in-memory/in-memory-ongs-repository.js"
@@ -24,7 +25,7 @@ describe("Case register pet unit tests", () => {
       cep: "00000-000",
       address: "Rua das Flores, 123",
       phone: "11999999999",
-      password_hash: "password-hash",
+      password_hash: await hash("123456", 6),
     })
 
     ongId = ong.id
