@@ -8,7 +8,7 @@ import {
   Environment,
   LevelOfIndependence,
 } from "@/generated/client.js"
-import { makeSearchPetCase } from "@/use-cases/factories/make-search-pet-case.js"
+import { makeSearchPetCase } from "@/use-cases/factories/make-search-pet-use-case.js"
 
 export async function searchPet(request: FastifyRequest, reply: FastifyReply) {
   const searchQuerySchema = z.object({

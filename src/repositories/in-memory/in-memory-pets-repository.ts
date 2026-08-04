@@ -10,6 +10,12 @@ import { PETS_PER_PAGE } from "@/repositories/pets-repository.js"
 export class InMemoryPetsRepository implements PetsRepository {
   public items: Pet[] = []
 
+  async findById(id: string) {
+    const pet = this.items.find((item) => item.id === id)
+
+    return Promise.resolve(pet ?? null)
+  }
+
   async searchMany({
     ongsIds,
     page,

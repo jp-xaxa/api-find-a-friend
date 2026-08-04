@@ -10,7 +10,7 @@ import {
 } from "@/generated/client.js"
 import { DataMandatoryAlreadyExistsError } from "@/use-cases/errors/data-mandatory-already-exists-error.js"
 import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-found-error.js"
-import { makeRegisterPetCase } from "@/use-cases/factories/make-register-pet-case.js"
+import { makeRegisterPetCase } from "@/use-cases/factories/make-register-pet-use-case.js"
 
 export async function registerPet(
   request: FastifyRequest,
@@ -43,7 +43,7 @@ export async function registerPet(
   try {
     const registerPetCase = makeRegisterPetCase()
 
-    await registerPetCase.execute({
+    const { pet } = await registerPetCase.execute({
       ongId,
       name,
       about,
@@ -54,6 +54,8 @@ export async function registerPet(
       environment,
       donation_requirements,
     })
+
+    return reply.status(201).send({ ...pet })
   } catch (err) {
     if (err instanceof DataMandatoryAlreadyExistsError) {
       return reply.status(409).send({ message: err.message })
@@ -65,6 +67,4 @@ export async function registerPet(
 
     throw err
   }
-
-  return reply.status(201).send()
 }

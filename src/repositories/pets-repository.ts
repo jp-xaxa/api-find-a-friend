@@ -17,7 +17,7 @@ export interface SearchManyParams extends PetFilters {
 }
 
 export interface PetsRepository {
-  // findById(id: string): Promise<Ong | null>
+  findById(id: string): Promise<Pet | null>
   searchMany(params: SearchManyParams): Promise<Pet[]>
   create(data: Prisma.PetUncheckedCreateInput): Promise<Pet>
 }

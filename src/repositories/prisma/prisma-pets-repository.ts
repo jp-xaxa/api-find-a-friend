@@ -5,25 +5,15 @@ import type { PetsRepository, SearchManyParams } from "../pets-repository.js"
 import { PETS_PER_PAGE } from "../pets-repository.js"
 
 export class PrismaPetsRepository implements PetsRepository {
-  // async findById(id: string) {
-  //   const ong = await prisma.ong.findUnique({
-  //     where: {
-  //       id,
-  //     },
-  //   })
+  async findById(id: string) {
+    const pet = await prisma.pet.findUnique({
+      where: {
+        id,
+      },
+    })
 
-  //   return ong
-  // }
-
-  // async findByEmail(email: string) {
-  //   const ong = await prisma.ong.findUnique({
-  //     where: {
-  //       email,
-  //     },
-  //   })
-
-  //   return Promise.resolve(ong)
-  // }
+    return pet
+  }
 
   async searchMany({
     ongsIds,
