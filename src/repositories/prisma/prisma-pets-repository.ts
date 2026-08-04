@@ -1,7 +1,8 @@
-import { Prisma } from "@/generated/client.js"
+import type { Prisma } from "@/generated/client.js"
 import { prisma } from "@/libs/prisma.js"
 
-import type { PetsRepository } from "../pets-repository.js"
+import type { PetsRepository, SearchManyParams } from "../pets-repository.js"
+import { PETS_PER_PAGE } from "../pets-repository.js"
 
 export class PrismaPetsRepository implements PetsRepository {
   // async findById(id: string) {
@@ -24,15 +25,31 @@ export class PrismaPetsRepository implements PetsRepository {
   //   return Promise.resolve(ong)
   // }
 
-  async searchMany(ongsId: string[], page: number) {
+  async searchMany({
+    ongsIds,
+    page,
+    donation_requirements,
+    ...filters
+  }: SearchManyParams) {
     const pets = await prisma.pet.findMany({
       where: {
         ong_id: {
-          in: ongsId,
+          in: ongsIds,
         },
+
+        // Filtros de enum ausentes não entram no where (equality direta).
+        ...filters,
+
+        ...(donation_requirements &&
+          donation_requirements.length > 0 && {
+            donation_requirements: {
+              hasEvery: donation_requirements,
+            },
+          }),
       },
-      take: 20,
-      skip: (page - 1) * 20,
+
+      take: PETS_PER_PAGE,
+      skip: (page - 1) * PETS_PER_PAGE,
     })
 
     return pets

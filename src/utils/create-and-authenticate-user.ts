@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto"
+
 import { hash } from "bcryptjs"
 import type { FastifyInstance } from "fastify"
 import request from "supertest"
@@ -8,22 +10,27 @@ interface AuthenticateResponseBody {
   token: string
 }
 
+export const DEFAULT_CITY = "Conselheiro Lafaiete - MG"
+
 export async function createAndAuthenticateUser(
   app: FastifyInstance,
+  city = DEFAULT_CITY,
 ): Promise<{ token: string }> {
+  const email = `${randomUUID()}@example.com`
+
   await prisma.ong.create({
     data: {
       name_responsavel: "João Pedro",
-      email: "joaopedro@example.com",
+      email,
       cep: "36400-014",
-      address: "Rua Amaro Ribeiro, 07 , Rosário, Conselheiro Lafaiete - MG",
+      address: `Rua Amaro Ribeiro, 07 , Rosário, ${city}`,
       phone: "(31) 9 9999-9999",
       password_hash: await hash("123456", 6),
     },
   })
 
   const authResponse = await request(app.server).post("/sessions").send({
-    email: "joaopedro@example.com",
+    email,
     password: "123456",
   })
 

@@ -1,16 +1,43 @@
 import { randomUUID } from "node:crypto"
 
-import type { Pet } from "@/generated/client.js"
-import { Prisma } from "@/generated/client.js"
-import type { PetsRepository } from "@/repositories/pets-repository.js"
+import type { Pet, Prisma } from "@/generated/client.js"
+import type {
+  PetsRepository,
+  SearchManyParams,
+} from "@/repositories/pets-repository.js"
+import { PETS_PER_PAGE } from "@/repositories/pets-repository.js"
 
 export class InMemoryPetsRepository implements PetsRepository {
   public items: Pet[] = []
 
-  async searchMany(ongsId: string[], page: number) {
+  async searchMany({
+    ongsIds,
+    page,
+    age,
+    size,
+    energy_Level,
+    level_independence,
+    environment,
+    donation_requirements,
+  }: SearchManyParams) {
     const pets = this.items
-      .filter((item) => ongsId.includes(item.ong_id))
-      .slice((page - 1) * 20, page * 20)
+      .filter((item) => ongsIds.includes(item.ong_id))
+      .filter((item) => !age || item.age === age)
+      .filter((item) => !size || item.size === size)
+      .filter((item) => !energy_Level || item.energy_Level === energy_Level)
+      .filter(
+        (item) =>
+          !level_independence || item.level_independence === level_independence,
+      )
+      .filter((item) => !environment || item.environment === environment)
+      .filter(
+        (item) =>
+          !donation_requirements?.length ||
+          donation_requirements.every((requirement) =>
+            item.donation_requirements.includes(requirement),
+          ),
+      )
+      .slice((page - 1) * PETS_PER_PAGE, page * PETS_PER_PAGE)
 
     return Promise.resolve(pets)
   }
